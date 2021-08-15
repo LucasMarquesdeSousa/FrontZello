@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Cadastrando } from 'src/app/cadastrando';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-cadastar',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastarComponent implements OnInit {
 
-  constructor() { }
+  retorno: any;
+  cadastrar:any = new Cadastrando();
+  
+
+  constructor(private dataService:DataService) { }
 
   ngOnInit(): void {
+    this.getResult();
+  }
+
+  getResult(){
+    this.dataService.getData().subscribe(res=>{
+      this.retorno = res;
+    });
+  }
+
+  insertData(){
+   this.dataService.insertData(this.cadastrar).subscribe(res=>{
+      
+   })
   }
 
 }
