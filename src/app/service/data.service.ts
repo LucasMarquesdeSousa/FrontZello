@@ -13,4 +13,7 @@ export class DataService {
   insertData(data:any){
     return this.httpClient.post('http://127.0.0.1:8000/api/cadastrar', data);
   }
+  loginData(data:any){
+    return this.httpClient.post('http://127.0.0.1:8000/api/login', data);
+  }
 }

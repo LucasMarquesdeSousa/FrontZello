@@ -7,37 +7,43 @@
                     <form (ngSubmit)='insertData()' class="row g-1 ">
                         <div class="col-md-6 ">
                             <label for="name" class="form-label">Nome:</label>
-                            <input type="text" class="form-control" name="name" id="name"
-                                placeholder="Digite seu nome completo" [(ngModel)]="cadastrar.name" />
+                            <input type="text" class="form-control" name="name" id="name"placeholder="Digite seu nome completo" [(ngModel)]="cadastrar.name" />
+                            <small class='form-text text-muted'>{{retorno.name}} </small>
                         </div>
                         <div class="col-md-6">
                             <label for="cpf" class="form-label">CPF:</label>
                             <input type="text" class="form-control" name="cpf" id="cpf" placeholder="Digite seu CPF"
                             [(ngModel)]="cadastrar.cpf" />
+                            <small class='form-text text-muted'>{{retorno.cpf}} </small>
                         </div>
                         <div class="col-md-6">
                             <label for="rg" class="form-label">RG:</label>
                             <input type="text" class="form-control" name="rg" id="rg" placeholder="Digite seu RG"
                             [(ngModel)]="cadastrar.rg" />
+                            <small class='form-text text-muted'>{{retorno.rg}} </small>
                         </div>
                         <div class="col-md-6">
                             <label for="email" class="form-label">Data de nacimento:</label>
                             <input type="date" class="form-control" name="data_nascimento" id="data_nascimento"
                                 placeholder="Digite seu e-mail" [(ngModel)]="cadastrar.data_nascimento" />
+                                <small class='form-text text-muted'>{{retorno.data_nacimento}} </small>
                         </div>
                         <div class="col-md-6 ">
                             <label for="senha" class="form-label">Senha:</label>
-                            <input type="text" class="form-control" name="senha" id="Senha"
+                            <input type="password" class="form-control" name="senha" id="Senha"
                                 placeholder="Digite uma senha" [(ngModel)]="cadastrar.senha" />
+                                <small class='form-text text-secondary'>{{retorno.senha}} </small>
                         </div>
                         <div class="col-md-6 ">
                             <label for="confSenha" class="form-label">Confirmar senha:</label>
-                            <input type="text" class="form-control" name="confSenha" id="confSenha"
-                                placeholder="Confirme sua senha" [(ngModel)]="cadastrar.confirm_password" />
+                            <input type="password" class="form-control" name="confSenha" id="confSenha"
+                                placeholder="Confirme sua senha" [(ngModel)]="cadastrar.confSenha" />
+                                <small class='form-text text-muted'>{{retorno.confSenha}} </small>
                         </div>
                         <div class="col-md-12 d-grid gap-2">
                             <input type="submit" class="btn btn-success" value="Cadastrar" />
                         </div>
+                        <small class='form-text text-secondary'>{{retorno.mensagem}} </small>
                     </form>
                 </div>
             </div>
